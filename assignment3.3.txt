@@ -1,0 +1,74 @@
+
+1. Test whether two vectors are exactly equal (element by element).
+vec1 = c(rownames(mtcars[1:15,]))
+vec2 = c(rownames(mtcars[11:25,]))
+
+ans:identical(vec1,vec2)
+    [1]FALSE
+
+
+2. Sort the character vector in ascending order and descending order.
+vec1 = c(rownames(mtcars[1:15,]))
+vec2 = c(rownames(mtcars[11:25,]))
+
+# sort the vector in ascending order
+sort(vec1)
+
+output:[1] "1"  "10" "11" "12" "13" "14" "15" "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9" 
+
+#sort the vector in descending order
+sort(vec1,decreasing = TRUE)
+
+output:[1] "9"  "8"  "7"  "6"  "5"  "4"  "3"  "2"  "15" "14" "13" "12" "11" "10" "1" 
+
+# sort the vector in ascending order
+sort(vec2)
+
+output:[1] "11" "12" "13" "14" "15" "16" "17" "18" "19" "20" "21" "22" "23" "24" "25"
+
+#sort the vector in descending order
+sort(vec2,decreasing = TRUE)
+
+output:[1] "25" "24" "23" "22" "21" "20" "19" "18" "17" "16" "15" "14" "13" "12" "11"
+
+
+3. What is the major difference between str() and paste() show an example.
+
+ans:str()
+    compactly display the internal structure of an R object
+example:
+      > str(mtcars)
+'data.frame':	32 obs. of  12 variables:
+ $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+ $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+ $ disp: num  160 160 108 258 360 ...
+ $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+ $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+ $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+ $ qsec: num  16.5 17 18.6 19.4 17 ...
+ $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+ $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+ $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+ $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
+ $ cars: chr  "1" "2" "3" "4" ...
+
+  paste()
+  paste function in R is used to concatenate vectors by converting them into  character.
+
+   syntax:paste(....,sep="",collapse =NULL)
+
+example:
+species<-c("AMAR","ASHIK","APPU","PAMMY","CHAII")
+species
+num<-1:5
+paste(species,num)
+output:[1] "AMAR 1"  "ASHIK 2" "APPU 3"  "PAMMY 4" "CHAII 5"
+
+
+4.Introduce a separator when concatenating the strings.
+species<-c("AMAR","ASHIK","APPU","PAMMY","CHAII")
+species
+num<-1:5
+paste(species,num,sep ="_")
+
+output:[1] "AMAR_1"  "ASHIK_2" "APPU_3"  "PAMMY_4" "CHAII_5"
